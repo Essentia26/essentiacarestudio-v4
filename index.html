@@ -167,7 +167,7 @@
             </div>
           </div>
 
-          <!-- Hero circle: ahora con isotipo.png -->
+          <!-- Hero circle: isotipo.png -->
           <div class="relative animate-fade-in-up animate-delay-4">
             <div class="aspect-square rounded-full overflow-hidden relative"
                  id="hero-image-container"
@@ -196,7 +196,7 @@
         <div class="grid md:grid-cols-3 gap-8">
           <div class="service-card p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
             <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: #f0ebe6;">
-              <span class="text-3xl" aria-hidden="true">💆‍♀️</span>
+              <img src="icon-spa.png" alt="SPA & Masajes" class="w-12 h-12 object-contain">
             </div>
             <h3 class="font-heading text-2xl mb-3" style="color: #2d5a4a;">SPA & Masajes</h3>
             <p class="text-sm leading-relaxed" style="color: #5a5a5a;">Relajación, bienestar y cuidado corporal para renovar tu energía.</p>
@@ -204,7 +204,7 @@
 
           <div class="service-card p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
             <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: #f0ebe6;">
-              <span class="text-3xl" aria-hidden="true">✨</span>
+              <img src="icon-facial.png" alt="Facial" class="w-12 h-12 object-contain">
             </div>
             <h3 class="font-heading text-2xl mb-3" style="color: #2d5a4a;">Facial</h3>
             <p class="text-sm leading-relaxed" style="color: #5a5a5a;">Limpieza, hidratación y glow con protocolos según tu piel.</p>
@@ -212,7 +212,7 @@
 
           <div class="service-card p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
             <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: #f0ebe6;">
-              <span class="text-3xl" aria-hidden="true">💅</span>
+              <img src="icon-unas.png" alt="Uñas" class="w-12 h-12 object-contain">
             </div>
             <h3 class="font-heading text-2xl mb-3" style="color: #2d5a4a;">Uñas</h3>
             <p class="text-sm leading-relaxed" style="color: #5a5a5a;">Manicure, pedicure y diseños prolijos para cada ocasión.</p>
@@ -226,9 +226,8 @@
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
           <div class="relative">
-            <!-- Imagen nosotros -->
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden">
-              <img src="nosotros.jpg" alt="Essentia Care Studio" class="w-full h-full object-cover">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden" style="background: linear-gradient(180deg, #d4c8be 0%, #c4b5a8 100%);">
+              <img src="nosotros.png" alt="Essentia Care Studio" class="w-full h-full object-cover">
             </div>
             <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full" style="background: #7ba393; opacity: 0.15;"></div>
           </div>
@@ -308,7 +307,7 @@
             </div>
           </div>
 
-          <!-- Reemplazo del formulario: Mapa visual -->
+          <!-- Mapa -->
           <div class="space-y-6 p-8 rounded-2xl"
                style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
 
@@ -318,7 +317,6 @@
             </div>
 
             <div class="rounded-xl overflow-hidden border" style="border-color:#e8e4df;">
-              <!-- Embed por búsqueda de dirección (no requiere API key) -->
               <iframe
                 title="Mapa Essentia Care Studio"
                 src="https://www.google.com/maps?q=Av.%20Vaca%20de%20Castro%20y%20Pedro%20de%20Mendoza,%20Quito&z=16&output=embed"
@@ -330,7 +328,6 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <!-- Botón con tu link real -->
             <a href="https://maps.app.goo.gl/TXAYqypKZe1172LL9?g_st=aw"
                target="_blank"
                rel="noopener"
@@ -384,10 +381,8 @@
   </div>
 
   <script>
-    // Año footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -401,7 +396,6 @@
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
