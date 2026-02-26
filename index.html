@@ -15,18 +15,9 @@
     .font-heading { font-family: 'Cormorant Garamond', serif; }
     .font-body { font-family: 'Montserrat', sans-serif; }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes ripple {
-      0% { transform: scale(1); opacity: 0.35; }
-      100% { transform: scale(1.55); opacity: 0; }
-    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes ripple { 0%{transform:scale(1);opacity:.35} 100%{transform:scale(1.55);opacity:0} }
 
     .animate-float { animation: float 6s ease-in-out infinite; }
     .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
@@ -36,30 +27,112 @@
     .animate-delay-4 { animation-delay: 0.8s; opacity: 0; }
 
     .ripple-effect { position: relative; isolation: isolate; }
-    .ripple-effect::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      background: inherit;
-      animation: ripple 2s ease-out infinite;
-      z-index: -1;
+    .ripple-effect::after{
+      content:'';
+      position:absolute; inset:0;
+      border-radius:inherit;
+      background:inherit;
+      animation:ripple 2s ease-out infinite;
+      z-index:-1;
     }
 
-    .service-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .service-card:hover { transform: translateY(-8px); }
+    .service-card{ transition: all .4s cubic-bezier(.4,0,.2,1); }
+    .service-card:hover{ transform: translateY(-8px); }
 
-    .decorative-line {
-      width: 60px;
-      height: 1px;
+    .decorative-line{
+      width:60px; height:1px;
       background: linear-gradient(90deg, transparent, #7ba393, transparent);
     }
+
+    /* ===== PRELOADER ===== */
+    #preloader{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(165deg, #f7f5f2 0%, #e8e4df 50%, #f0ebe6 100%);
+      transition: opacity 600ms ease, visibility 600ms ease;
+    }
+    #preloader.hide{ opacity:0; visibility:hidden; }
+
+    .loader-card{
+      width: min(420px, 92vw);
+      padding: 28px 26px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px solid rgba(45, 90, 74, 0.12);
+      box-shadow: 0 10px 40px rgba(45, 90, 74, 0.08);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+    .loader-logo{
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 14px auto;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.5);
+      border: 1px solid rgba(45, 90, 74, 0.18);
+      display: grid;
+      place-items: center;
+    }
+    .loader-logo img{ width: 78%; height: 78%; object-fit: contain; }
+
+    .loader-title{
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px;
+      letter-spacing: 0.02em;
+      color: #2d5a4a;
+      margin-bottom: 6px;
+    }
+    .loader-sub{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7ba393; /* verde */
+      margin-bottom: 16px;
+    }
+    .progress-wrap{
+      width:100%;
+      height:8px;
+      border-radius:999px;
+      background: rgba(45, 90, 74, 0.10);
+      overflow:hidden;
+    }
+    .progress-bar{
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background:#2d5a4a;
+      animation: loadingBar 1400ms ease-in-out infinite;
+    }
+    @keyframes loadingBar{
+      0%{width:10%;opacity:.55}
+      50%{width:85%;opacity:1}
+      100%{width:10%;opacity:.55}
+    }
+    body.loading{ overflow:hidden; }
   </style>
 
   <style>body { box-sizing: border-box; }</style>
 </head>
 
 <body class="h-full font-body">
+
+  <!-- PRELOADER -->
+  <div id="preloader" aria-label="Cargando sitio">
+    <div class="loader-card">
+      <div class="loader-logo">
+        <img src="isotipo.png" alt="Isotipo Essentia Care Studio">
+      </div>
+      <div class="loader-title">Essentia Care Studio</div>
+      <div class="loader-sub">Cargando…</div>
+      <div class="progress-wrap"><div class="progress-bar"></div></div>
+    </div>
+  </div>
+
   <div id="app-wrapper" class="h-full w-full overflow-auto">
 
     <!-- Background -->
@@ -83,7 +156,6 @@
     <nav class="relative z-10 px-6 py-6 md:px-12 lg:px-20">
       <div class="flex items-center justify-between max-w-7xl mx-auto">
         <div class="flex items-center gap-3">
-          <!-- Logo pequeño navbar (con letras) -->
           <div class="w-10 h-10 rounded-full overflow-hidden border" style="border-color:#2d5a4a;">
             <img src="logo.png" alt="Logo Essentia Care Studio" class="w-full h-full object-contain bg-white/30 p-1">
           </div>
@@ -143,7 +215,6 @@
             </p>
 
             <div class="flex flex-wrap gap-4 animate-fade-in-up animate-delay-3">
-
               <a class="relative px-8 py-4 text-sm tracking-widest uppercase text-white transition-all hover:shadow-lg ripple-effect rounded-none"
                  href="https://essentiastudio.zohobookings.com/#/estetica"
                  target="_blank" rel="noopener"
@@ -167,14 +238,12 @@
             </div>
           </div>
 
-          <!-- Hero circle: isotipo.png -->
+          <!-- Hero circle: isotipo -->
           <div class="relative animate-fade-in-up animate-delay-4">
             <div class="aspect-square rounded-full overflow-hidden relative"
                  id="hero-image-container"
                  style="background: linear-gradient(145deg, #d4c8be 0%, #e8ddd4 100%);">
-              <img src="isotipo.png"
-                   alt="Isotipo Essentia"
-                   class="absolute inset-0 w-full h-full object-contain p-16">
+              <img src="isotipo.png" alt="Isotipo Essentia" class="absolute inset-0 w-full h-full object-contain p-16">
             </div>
             <div class="absolute -bottom-4 -left-4 w-24 h-24 rounded-full border opacity-40" style="border-color: #7ba393;"></div>
             <div class="absolute -top-4 -right-4 w-16 h-16 rounded-full" style="background: #7ba393; opacity: 0.2;"></div>
@@ -225,10 +294,19 @@
     <section id="about" class="relative px-6 py-20 md:px-12 lg:px-20">
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16 items-center">
+
           <div class="relative">
-            <div class="aspect-[4/5] rounded-3xl overflow-hidden" style="background: linear-gradient(180deg, #d4c8be 0%, #c4b5a8 100%);">
-              <img src="nosotros.png" alt="Essentia Care Studio" class="w-full h-full object-cover">
+            <!-- CARRUSEL (5 imágenes: nosotros.png + 4 jpg) -->
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden relative">
+
+              <img src="nosotros.png"  alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+              <img src="nosotros1.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
+              <img src="nosotros2.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
+              <img src="nosotros3.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
+              <img src="nosotros4.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
+
             </div>
+
             <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full" style="background: #7ba393; opacity: 0.15;"></div>
           </div>
 
@@ -244,6 +322,7 @@
               Te acompañamos con tratamientos que combinan cuidado, estética y relajación.
             </p>
           </div>
+
         </div>
       </div>
     </section>
@@ -378,11 +457,14 @@
         </div>
       </div>
     </footer>
+
   </div>
 
   <script>
+    // Año footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile menu
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -396,12 +478,38 @@
       link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
 
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+    });
+
+    // Carrusel About (cada 3 segundos)
+    const slides = document.querySelectorAll('.about-slide');
+    let currentSlide = 0;
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('opacity-100');
+      slides[currentSlide].classList.add('opacity-0');
+
+      currentSlide = (currentSlide + 1) % slides.length;
+
+      slides[currentSlide].classList.remove('opacity-0');
+      slides[currentSlide].classList.add('opacity-100');
+    }, 3000);
+
+    // Preloader elegante
+    document.body.classList.add('loading');
+
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      setTimeout(() => {
+        preloader.classList.add('hide');
+        document.body.classList.remove('loading');
+      }, 900);
     });
   </script>
 </body>
