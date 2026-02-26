@@ -91,7 +91,7 @@
       font-size: 13px;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: #7ba393; /* verde */
+      color: #7ba393;
       margin-bottom: 16px;
     }
     .progress-wrap{
@@ -257,35 +257,45 @@
     <section id="services" class="relative px-6 py-20 md:px-12 lg:px-20" style="background: rgba(255,255,255,0.5);">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
-          <p class="text-sm tracking-widest uppercase mb-4" style="color: #7ba393;">Descubre</p>
           <h2 class="font-heading text-4xl md:text-5xl font-light mb-6" style="color: #2d5a4a;">Nuestros servicios</h2>
           <div class="decorative-line mx-auto"></div>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="service-card p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
-            <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: #f0ebe6;">
-              <img src="icon-spa.png" alt="SPA & Masajes" class="w-12 h-12 object-contain">
+
+          <!-- Card 1 -->
+          <div class="service-card group p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
+            <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center shadow-md"
+                 style="background: linear-gradient(145deg, #f0ebe6, #e4ded8);">
+              <img src="icon-spa.png" alt="SPA & Masajes"
+                   class="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-110">
             </div>
             <h3 class="font-heading text-2xl mb-3" style="color: #2d5a4a;">SPA & Masajes</h3>
             <p class="text-sm leading-relaxed" style="color: #5a5a5a;">Relajación, bienestar y cuidado corporal para renovar tu energía.</p>
           </div>
 
-          <div class="service-card p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
-            <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: #f0ebe6;">
-              <img src="icon-facial.png" alt="Facial" class="w-12 h-12 object-contain">
+          <!-- Card 2 -->
+          <div class="service-card group p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
+            <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center shadow-md"
+                 style="background: linear-gradient(145deg, #f0ebe6, #e4ded8);">
+              <img src="icon-facial.png" alt="Facial"
+                   class="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-110">
             </div>
             <h3 class="font-heading text-2xl mb-3" style="color: #2d5a4a;">Facial</h3>
             <p class="text-sm leading-relaxed" style="color: #5a5a5a;">Limpieza, hidratación y glow con protocolos según tu piel.</p>
           </div>
 
-          <div class="service-card p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
-            <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background: #f0ebe6;">
-              <img src="icon-unas.png" alt="Uñas" class="w-12 h-12 object-contain">
+          <!-- Card 3 -->
+          <div class="service-card group p-8 rounded-2xl text-center" style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
+            <div class="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center shadow-md"
+                 style="background: linear-gradient(145deg, #f0ebe6, #e4ded8);">
+              <img src="icon-unas.png" alt="Uñas"
+                   class="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-110">
             </div>
             <h3 class="font-heading text-2xl mb-3" style="color: #2d5a4a;">Uñas</h3>
             <p class="text-sm leading-relaxed" style="color: #5a5a5a;">Manicure, pedicure y diseños prolijos para cada ocasión.</p>
           </div>
+
         </div>
       </div>
     </section>
@@ -296,17 +306,13 @@
         <div class="grid md:grid-cols-2 gap-16 items-center">
 
           <div class="relative">
-            <!-- CARRUSEL (5 imágenes: nosotros.png + 4 jpg) -->
             <div class="aspect-[4/5] rounded-3xl overflow-hidden relative">
-
               <img src="nosotros.png"  alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000">
-              <img src="nosotros1.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
-              <img src="nosotros2.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
-              <img src="nosotros3.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
-              <img src="nosotros4.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0   transition-opacity duration-1000">
-
+              <img src="./nosotros1.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+              <img src="./nosotros2.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+              <img src="./nosotros3.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+              <img src="./nosotros4.jpg" alt="Essentia Care Studio" class="about-slide absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000">
             </div>
-
             <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full" style="background: #7ba393; opacity: 0.15;"></div>
           </div>
 
@@ -386,7 +392,6 @@
             </div>
           </div>
 
-          <!-- Mapa -->
           <div class="space-y-6 p-8 rounded-2xl"
                style="background: #ffffff; box-shadow: 0 4px 20px rgba(45, 90, 74, 0.08);">
 
@@ -438,19 +443,13 @@
           <div class="flex items-center gap-6">
             <a href="https://linktr.ee/essentiacarestudio" target="_blank" rel="noopener"
                class="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:opacity-70"
-               style="background:#ffffff;" aria-label="Redes sociales">
-              <span aria-hidden="true">🌿</span>
-            </a>
+               style="background:#ffffff;" aria-label="Redes sociales"><span aria-hidden="true">🌿</span></a>
             <a href="https://wa.me/593983100091" target="_blank" rel="noopener"
                class="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:opacity-70"
-               style="background:#ffffff;" aria-label="WhatsApp">
-              <span aria-hidden="true">💬</span>
-            </a>
+               style="background:#ffffff;" aria-label="WhatsApp"><span aria-hidden="true">💬</span></a>
             <a href="https://essentiastudio.zohobookings.com/#/estetica" target="_blank" rel="noopener"
                class="w-10 h-10 rounded-full flex items-center justify-center transition-colors hover:opacity-70"
-               style="background:#ffffff;" aria-label="Reservas">
-              <span aria-hidden="true">📅</span>
-            </a>
+               style="background:#ffffff;" aria-label="Reservas"><span aria-hidden="true">📅</span></a>
           </div>
 
           <p class="text-xs" style="color:#5a5a5a;">© <span id="year"></span> Essentia Care Studio.</p>
@@ -501,16 +500,23 @@
       slides[currentSlide].classList.add('opacity-100');
     }, 3000);
 
-    // Preloader elegante
+    // Preloader elegante (con fallback anti “pantalla en blanco”)
     document.body.classList.add('loading');
+    const preloader = document.getElementById('preloader');
 
-    window.addEventListener('load', () => {
-      const preloader = document.getElementById('preloader');
-      setTimeout(() => {
+    function hidePreloader() {
+      if (!preloader.classList.contains('hide')) {
         preloader.classList.add('hide');
         document.body.classList.remove('loading');
-      }, 900);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(hidePreloader, 900);
     });
+
+    // Fallback: si una imagen no carga, igual abre el sitio
+    setTimeout(hidePreloader, 3500);
   </script>
 </body>
 </html>
